@@ -16,8 +16,6 @@ def catchThieves(grid, k):
     caught_thieves = set()
     num_thieves_caught = 0
 
-    #euclidean distance
-
     for policeman in policemen:
         sorted_thieves = sorted(
             thieves, key=lambda thief: abs(thief[0] - policeman[0]) + abs(thief[1] - policeman[1])
@@ -42,11 +40,11 @@ def random_grid_gen(m,n):
 	grid = [[thing() for _ in range(n)] for _ in range(m)]
 	return grid
 
-m = 5
-n = 5
+m = int(input("number of rows : "))
+n = int(input("number of columns : "))
 
 grid = random_grid_gen(m,n)
-k = 1
+k = int(input("number of steps : "))
 
 number_thieves_caught, number_thieves, number_cops = catchThieves(grid,k)
 

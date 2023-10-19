@@ -1,5 +1,3 @@
-import random as rd
-
 class knapsack:
 	
 	def knap(n,cap,profit,weight):
@@ -19,10 +17,9 @@ class knapsack:
 
 
 
-graph_caps = [3,10,100,200,300,500,700,1000,1200,1300]
-
-profits = [[rd.randint(0,100) for _ in range(i)] for i in graph_caps]
-weights = [[rd.randint(1,30) for _ in range(i)] for i in graph_caps]
+profits = [[60, 100, 120],[1, 2, 3, 10, 20],[10, 40, 30, 50]]
+weights = [[10, 20, 30],[2, 3, 4, 5, 9],[5, 4, 6, 3]]
+caps = [50,10,10]
 
 obj = knapsack
 
@@ -32,7 +29,7 @@ for index,elements in enumerate(profits):
 	profit = elements
 	weight = weights[index]
 
-	cap = 50
+	cap = caps[index]
 	n = len(elements)
 	result.append(obj.knap(n,cap,profit,weight))
 
